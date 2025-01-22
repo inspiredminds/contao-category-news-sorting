@@ -1,0 +1,8 @@
+services:
+    _defaults:
+        autoconfigure: true
+        autowire: true
+
+    InspiredMinds\ContaoCategoryNewsSorting\:
+        resource: ../src
+        exclude: ../src/{ContaoManager,DependencyInjection,ContaoCategoryNewsSortingBundle.php}

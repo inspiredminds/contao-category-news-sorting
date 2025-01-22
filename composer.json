@@ -1,0 +1,61 @@
+{
+    "name": "inspiredminds/contao-category-news-sorting",
+    "description": "Allows you to sort news items per category individually.",
+    "type": "contao-bundle",
+    "license": "LGPL-3.0-or-later",
+    "homepage": "https://github.com/inspiredminds/contao-category-news-sorting",
+    "authors": [
+        {
+            "name": "Fritz Michael Gschwantner",
+            "email": "fmg@inspiredminds.at",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/inspiredminds/contao-category-news-sorting/issues",
+        "source": "https://github.com/inspiredminds/contao-category-news-sorting",
+        "forum": "https://community.contao.org/de"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/fritzmg"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "codefog/contao-haste": "^4.0 || ^5.0",
+        "codefog/contao-news_categories": "^3.0 || ^4.0",
+        "contao/core-bundle": "^4.13 || ^5.0",
+        "doctrine/dbal": "^2.11 || ^3.0 || ^4.0",
+        "inspiredminds/contao-categories-news-filter": "^1.0",
+        "inspiredminds/contao-news-filter-event": "^1.1",
+        "symfony/config": "^5.4 || ^6.4 || ^7.1",
+        "symfony/dependency-injection": "^5.4 || ^6.4 || ^7.1",
+        "symfony/http-kernel": "^5.4 || ^6.4 || ^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "InspiredMinds\\ContaoCategoryNewsSorting\\": "src/"
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "InspiredMinds\\ContaoCategoryNewsSorting\\ContaoManager\\Plugin"
+    },
+    "require-dev": {
+        "contao/easy-coding-standard": "^6.0",
+        "contao/manager-plugin": "^2.12",
+        "contao/rector": "^1.0",
+        "maglnet/composer-require-checker": "^3.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": true,
+            "php-http/discovery": false,
+            "contao-community-alliance/composer-plugin": true,
+            "contao/manager-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "sort-packages": true
+    }
+}
