@@ -7,5 +7,5 @@ Contao Category News Sorting
 Allows you to sort news items per category individually.
 
 For each category there will be a new operation where you can individually sort the news items belonging to this exact
-news category. Then in the news list module you can select the "Category sorting" setting for sorting the news items -
-which will apply this custom sorting whenever the news list is filtered by the respective category.
+news category. Then in the news list module you can activate the __Enable category sorting__ setting which will apply
+this custom sorting whenever the news list is filtered by the respective category.
