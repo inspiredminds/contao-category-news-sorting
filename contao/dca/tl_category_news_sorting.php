@@ -12,7 +12,6 @@ use Contao\DC_Table;
 $GLOBALS['TL_DCA']['tl_category_news_sorting'] = [
     'config' => [
         'dataContainer' => DC_Table::class,
-        'enableVersioning' => true,
         'ptable' => 'tl_news_category',
         'closed' => true,
         'notEditable' => true,
@@ -37,6 +36,7 @@ $GLOBALS['TL_DCA']['tl_category_news_sorting'] = [
             'fields' => ['news'],
             'format' => '%s',
         ],
+        'operations' => [],
     ],
     'fields' => [
         'id' => [
