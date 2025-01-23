@@ -16,7 +16,7 @@ use Doctrine\DBAL\Connection;
 use InspiredMinds\ContaoNewsFilterEvent\Event\NewsFilterEvent;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-#[AsEventListener(priority: -1000)]
+#[AsEventListener(priority: -2000)]
 class NewsFilterEventListener
 {
     public function __construct(
@@ -30,7 +30,7 @@ class NewsFilterEventListener
     {
         $module = $event->getModule();
 
-        if ('category_sorting' !== $module->news_order) {
+        if (!$module->news_enableCategorySorting) {
             return;
         }
 
@@ -48,6 +48,12 @@ class NewsFilterEventListener
 
         $newsIds = array_map('intval', $this->db->fetchFirstColumn('SELECT news FROM tl_category_news_sorting WHERE pid = ? ORDER BY sorting ASC', [$category->id]));
 
-        $event->addOption('order', \sprintf('FIELD (id, %s)', implode(', ', $newsIds)), true);
+        if (!$newsIds) {
+            return;
+        }
+
+        $order = \sprintf('FIELD (tl_news.id, %s), %s', implode(', ', $newsIds), $event->getOption('order') ?: 'tl_news.date DESC');
+
+        $event->addOption('order', $order, true);
     }
 }
