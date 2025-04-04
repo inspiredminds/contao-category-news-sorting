@@ -6,3 +6,6 @@ services:
     InspiredMinds\ContaoCategoryNewsSorting\:
         resource: ../src
         exclude: ../src/{ContaoManager,DependencyInjection,ContaoCategoryNewsSortingBundle.php}
+
+    InspiredMinds\ContaoCategoryNewsSorting\EventListener\DataContainer\CategoryNewsSortingRemoveCallback:
+        public: true

@@ -37,6 +37,12 @@ $GLOBALS['TL_DCA']['tl_category_news_sorting'] = [
             'format' => '%s',
         ],
         'operations' => [],
+        'global_operations' => [
+            'remove' => [
+                'href' => 'key=removeCategoryNewsSorting',
+                'icon' => 'delete.svg',
+            ],
+        ],
     ],
     'fields' => [
         'id' => [
